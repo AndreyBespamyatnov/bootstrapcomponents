@@ -43,11 +43,14 @@
   <ItemGroup>
     <Compile Include="Common\Category.cs" />
     <Compile Include="Common\Size.cs" />
+    <Compile Include="Components\Buttons\ButtonExtensions.cs" />
     <Compile Include="Components\Buttons\ButtonGroup.cs" />
     <Compile Include="Components\Buttons\Button.cs" />
     <Compile Include="Components\Buttons\ButtonGroupSettings.cs" />
+    <Compile Include="Components\Buttons\ButtonSettings.cs" />
     <Compile Include="Components\Buttons\ButtonToolbar.cs" />
     <Compile Include="Components\Images\Image.cs" />
+    <Compile Include="Components\Images\ImageExtensions.cs" />
     <Compile Include="Core\Bootstrap.cs" />
     <Compile Include="Core\CloseableHtml.cs" />
     <Compile Include="Core\HtmlAttribute.cs" />

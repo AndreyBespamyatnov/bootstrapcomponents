@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bootstrap Components: Components to ease the use of the Twitter Bootstrap framework in ASP.NET MVC web applications">
+        <meta name="author" content="Jordan Wallwork">
+
+        <title>BootstrapComponents</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet">
+        <link href="@Url.Content("~/Content/styles.css")" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="@Url.Content("~/Content/html5shiv.js")"></script>
+        <script src="@Url.Content("~/Content/respond.min.js")"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <a href="https://github.com/jordanwallwork/bootstrapcomponents"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+        <div class="container">
+            <div class="well">
+                <h1>Bootstrap Components</h1>
+                <p class="lead">Components to ease the use of the Twitter Bootstrap framework in ASP.NET MVC web applications</p>    
+            </div>
+            @RenderBody()
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="@Url.Content("~/Content/bootstrap.min.js")"></script>
+        
+    </body>
+</html>

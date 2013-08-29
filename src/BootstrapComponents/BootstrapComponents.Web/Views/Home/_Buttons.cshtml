@@ -1,0 +1,37 @@
+﻿@using BootstrapComponents.Common
+@using BootstrapComponents.Components.Buttons
+@using BootstrapComponents.Components.Images
+<h2>Buttons</h2>
+
+<h3>Options</h3>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @Html.Button("Default")
+        @Html.Button("Primary", new ButtonSettings { Category = Category.Primary })
+        @Html.Button("Success", new ButtonSettings { Category = Category.Success })
+        @Html.Button("Info", new ButtonSettings { Category = Category.Info })
+        @Html.Button("Warning", new ButtonSettings { Category = Category.Warning })
+        @Html.Button("Danger", new ButtonSettings { Category = Category.Danger })
+        @Html.Button("Link", new ButtonSettings { Category = Category.Link })
+    </div>
+    <div class="panel-footer code">// Standard gray button with gradient
+&#64;Html.Button("Default")
+
+// Provides extra visual weight and identifies the primary action in a set of buttons
+&#64;Html.Button("Primary", new ButtonSettings { Category = Category.Primary })
+
+// Indicates a successful or positive action
+&#64;Html.Button("Success", new ButtonSettings { Category = Category.Success })
+
+// Contextual button for informational alert messages
+&#64;Html.Button("Info", new ButtonSettings { Category = Category.Info })
+
+// Indicates caution should be taken with this action
+&#64;Html.Button("Warning", new ButtonSettings { Category = Category.Warning })
+
+// Indicates a dangerous or potentially negative action
+&#64;Html.Button("Danger", new ButtonSettings { Category = Category.Danger })
+
+// Deemphasize a button by making it look like a link while maintaining button behavior
+&#64;Html.Button("Link", new ButtonSettings { Category = Category.Link })
+</div>

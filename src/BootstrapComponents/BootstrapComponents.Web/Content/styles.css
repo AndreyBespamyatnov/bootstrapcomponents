@@ -1,0 +1,8 @@
+﻿body { padding-top: 20px; }
+
+.panel-footer.code {
+    font-family: monospace;
+    white-space: pre;
+    display: block;
+    unicode-bidi: embed
+}
