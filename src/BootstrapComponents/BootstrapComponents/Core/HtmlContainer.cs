@@ -15,7 +15,6 @@ namespace BootstrapComponents.Core
         {
             HtmlTag = tag;
             SelfClosing = selfClosing;
-            InnerHtml = "";
         }
 
         protected virtual string StartHtml()
@@ -23,39 +22,21 @@ namespace BootstrapComponents.Core
             return string.Format("<{0}{1}>", HtmlTag, Attrs.Any() ? " " + Attrs : "");
         }
 
-        public string InnerHtml { get; set; }
-        public virtual string BuildInnerHtml()
-        {
-            return InnerHtml;
-        }
+        public abstract string InnerHtml();
 
         protected virtual string EndHtml()
         {
             return string.Format("</{0}>", HtmlTag);
         }
 
-        /// <summary>
-        /// Insert any html content
-        /// </summary>
-        /// <param name="html"></param>
-        public void Element(string html)
-        {
-            InnerHtml += html;
-        }
-        /// <summary>
-        /// Insert any html content
-        /// </summary>
-        /// <param name="html"></param>
-        public void Element(IHtmlString html)
-        {
-            InnerHtml += html;
-        }
-
         public virtual string ToHtmlString()
         {
-            if (SelfClosing && string.IsNullOrEmpty(BuildInnerHtml()))
+            var inner = InnerHtml();
+            if (SelfClosing && string.IsNullOrEmpty(inner))
+            {
                 return string.Format("<{0}{1} />", HtmlTag, Attrs.Any() ? " " + Attrs : "");
-            return StartHtml() + BuildInnerHtml() + EndHtml();
+            }
+            return StartHtml() + inner + EndHtml();
         }
 
         /// <summary>
