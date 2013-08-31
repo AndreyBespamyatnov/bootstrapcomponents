@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,8 +50,10 @@
     <Compile Include="Components\Buttons\ButtonTests.cs" />
     <Compile Include="Components\Buttons\ButtonToolbarTests.cs" />
     <Compile Include="Components\Images\ImageTests.cs" />
+    <Compile Include="Components\Navbars\NavbarTests.cs" />
     <Compile Include="Core\HtmlAttributesTests.cs" />
     <Compile Include="Core\HtmlContainerTests.cs" />
+    <Compile Include="Core\StringBuilderWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

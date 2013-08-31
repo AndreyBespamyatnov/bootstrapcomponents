@@ -14,7 +14,7 @@ namespace BootstrapComponents.Components.Buttons
             Attrs["class"] = "btn-toolbar";
         }
 
-        public override string BuildInnerHtml()
+        public override string InnerHtml()
         {
             return string.Join("", _buttonGroups.Select(x => x.ToHtmlString()));
         }

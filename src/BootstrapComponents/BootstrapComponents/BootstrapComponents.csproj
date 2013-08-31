@@ -51,13 +51,18 @@
     <Compile Include="Components\Buttons\ButtonToolbar.cs" />
     <Compile Include="Components\Images\Image.cs" />
     <Compile Include="Components\Images\ImageExtensions.cs" />
+    <Compile Include="Components\Navbars\Navbar.cs" />
+    <Compile Include="Components\Navbars\NavbarSettings.cs" />
     <Compile Include="Core\Bootstrap.cs" />
     <Compile Include="Core\CloseableHtml.cs" />
+    <Compile Include="Core\NoInnerHtmlContainer.cs" />
+    <Compile Include="Core\GenericInnerHtmlContainer.cs" />
     <Compile Include="Core\HtmlAttribute.cs" />
     <Compile Include="Core\HtmlAttributes.cs" />
     <Compile Include="Core\HtmlContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

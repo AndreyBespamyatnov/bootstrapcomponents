@@ -2,7 +2,7 @@
 
 namespace BootstrapComponents.Components.Images
 {
-    public class Image : HtmlContainer
+    public class Image : NoInnerHtmlContainer
     {
         public Image(string src, string alt, Style style, bool responsive = false) : base("img", true)
         {

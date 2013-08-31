@@ -56,7 +56,7 @@ namespace BootstrapComponents.Tests.Core
         }
     }
 
-    public class MockHtmlContainer : HtmlContainer
+    public class MockHtmlContainer : NoInnerHtmlContainer
     {
         public MockHtmlContainer(string tag, bool selfClosing = true) : base(tag, selfClosing)
         {

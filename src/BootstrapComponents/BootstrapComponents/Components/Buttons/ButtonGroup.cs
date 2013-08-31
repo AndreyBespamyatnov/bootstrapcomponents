@@ -23,7 +23,7 @@ namespace BootstrapComponents.Components.Buttons
             _settings.UpdateAttributes(Attrs);
         }
 
-        public override string BuildInnerHtml()
+        public override string InnerHtml()
         {
             return string.Join("", _buttons.Select(x => x.ToHtmlString()));
         }
