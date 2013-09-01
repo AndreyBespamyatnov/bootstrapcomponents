@@ -7,18 +7,26 @@ namespace BootstrapComponents.Components.Navbars
         public NavbarSettings()
         {
             UseInnerContainer = true;
-            FixedPosition = FixedPosition.None;
+            Fixed = FixedPosition.None;
         }
 
-        public FixedPosition FixedPosition { get; set; }
+        public FixedPosition Fixed { get; set; }
         public bool UseInnerContainer { get; set; }
+        public bool Inverse { get; set; }
 
-        public NavbarSettings Fixed(FixedPosition fixedPosition = FixedPosition.Top)
+        public NavbarSettings FixedTop() { return SetFixed(FixedPosition.Top); }
+        public NavbarSettings FixedBottom() { return SetFixed(FixedPosition.Bottom); }
+
+        public NavbarSettings SetFixed(FixedPosition fixedPosition)
         {
-            FixedPosition = fixedPosition;
+            Fixed = fixedPosition;
             return this;
         }
-
+        public NavbarSettings SetInverse(bool inverse = true)
+        {
+            Inverse = inverse;
+            return this;
+        }
 
     }
     

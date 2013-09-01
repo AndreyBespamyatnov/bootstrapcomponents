@@ -7,31 +7,89 @@
 <div class="panel panel-default">
     <div class="panel-body">
         @Html.Button("Default")
-        @Html.Button("Primary", new ButtonSettings { Category = Category.Primary })
-        @Html.Button("Success", new ButtonSettings { Category = Category.Success })
-        @Html.Button("Info", new ButtonSettings { Category = Category.Info })
-        @Html.Button("Warning", new ButtonSettings { Category = Category.Warning })
-        @Html.Button("Danger", new ButtonSettings { Category = Category.Danger })
-        @Html.Button("Link", new ButtonSettings { Category = Category.Link })
+        @Html.Button("Primary", Button.Settings.Primary())
+        @Html.Button("Success", Button.Settings.Success())
+        @Html.Button("Info", Button.Settings.Info())
+        @Html.Button("Warning", Button.Settings.Warning())
+        @Html.Button("Danger", Button.Settings.Danger())
+        @Html.Button("Link", Button.Settings.Link())
     </div>
     <div class="panel-footer code">// Standard gray button with gradient
 &#64;Html.Button("Default")
 
 // Provides extra visual weight and identifies the primary action in a set of buttons
-&#64;Html.Button("Primary", new ButtonSettings { Category = Category.Primary })
+&#64;Html.Button("Primary", Button.Settings.Primary())
 
 // Indicates a successful or positive action
-&#64;Html.Button("Success", new ButtonSettings { Category = Category.Success })
+&#64;Html.Button("Success", Button.Settings.Success())
 
 // Contextual button for informational alert messages
-&#64;Html.Button("Info", new ButtonSettings { Category = Category.Info })
+&#64;Html.Button("Info", Button.Settings.Info())
 
 // Indicates caution should be taken with this action
-&#64;Html.Button("Warning", new ButtonSettings { Category = Category.Warning })
+&#64;Html.Button("Warning", Button.Settings.Warning())
 
 // Indicates a dangerous or potentially negative action
-&#64;Html.Button("Danger", new ButtonSettings { Category = Category.Danger })
+&#64;Html.Button("Danger", Button.Settings.Danger())
 
 // Deemphasize a button by making it look like a link while maintaining button behavior
-&#64;Html.Button("Link", new ButtonSettings { Category = Category.Link })
+&#64;Html.Button("Link", Button.Settings.Link())
+    </div>
+</div>
+    
+<h3>Sizes</h3>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>
+            @Html.Button("Large Button", Button.Settings.Large().Primary())
+            @Html.Button("Large Button", Button.Settings.Large())
+        </p>
+        <p>
+            @Html.Button("Default Button", Button.Settings.Primary())
+            @Html.Button("Default Button")
+        </p>
+        <p>
+            @Html.Button("Small Button", Button.Settings.Small().Primary())
+            @Html.Button("Small Button", Button.Settings.Small())
+        </p>
+        <p>
+            @Html.Button("Extra Small Button", Button.Settings.ExtraSmall().Primary())
+            @Html.Button("Extra Small Button", Button.Settings.ExtraSmall())
+        </p>
+        <div class="well">
+            @Html.Button("Block Level Button", Button.Settings.Block())
+        </div>
+    </div>
+    <div class="panel-footer code">&lt;p&gt;
+    &#64;Html.Button("Large Button", Button.Settings.Large().Primary())
+    &#64;Html.Button("Large Button", Button.Settings.Large())
+&lt;/p&gt;
+&lt;p&gt;
+    &#64;Html.Button("Default Button", Button.Settings.Primary())
+    &#64;Html.Button("Default Button")
+&lt;/p&gt;
+&lt;p&gt;
+    &#64;Html.Button("Small Button", Button.Settings.Small().Primary())
+    &#64;Html.Button("Small Button", Button.Settings.Small())
+    &lt;/p&gt;
+&lt;p&gt;
+    &#64;Html.Button("Extra Small Button", Button.Settings.ExtraSmall().Primary())
+    &#64;Html.Button("Extra Small Button", Button.Settings.ExtraSmall())
+&lt;p&gt;
+&lt;div class="well"&gt;
+    &#64;Html.Button("Block Level Button", Button.Settings.Block())
+&lt;div&gt;
+    </div>
+</div>
+
+<h3>Disabled State</h3>
+<p>Note: If you are using a button-styled link, remember that it won't actually be disabled - you'll need to use javascript to achieve that</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @Html.Button("I am a disabled button", Button.Settings.Disabled())
+        @Html.Button("I am a disabled-button styled link", Button.Settings.Disabled().Url("www.google.com"))
+    </div>
+    <div class="panel-footer code">&#64;Html.Button("I am a disabled button", Button.Settings.Disabled())
+&#64;Html.Button("I am a disabled-button styled link", Button.Settings.Disabled().Url("www.google.com"))
+    </div>
 </div>

@@ -1,4 +1,5 @@
-﻿using BootstrapComponents.Common;
+﻿using System.Security.Policy;
+using BootstrapComponents.Common;
 using BootstrapComponents.Core;
 
 namespace BootstrapComponents.Components.Buttons
@@ -7,10 +8,10 @@ namespace BootstrapComponents.Components.Buttons
     {
         public Size Size { get; set; }
         public bool BlockLevel { get; set; }
-        public bool Disabled { get; set; }
+        public bool IsDisabled { get; set; }
         public Category Category { get; set; }
         public ButtonTag Tag { get; set; }
-        public string Url { get; set; }
+        public string LinkUrl { get; set; }
 
         public ButtonSettings()
         {
@@ -19,19 +20,52 @@ namespace BootstrapComponents.Components.Buttons
             Tag = ButtonTag.Button;
         }
 
-        public void UpdateAttributes(HtmlAttributes attrs)
+        public ButtonSettings ExtraSmall() { return SetSize(Size.Xs); }
+        public ButtonSettings Small() { return SetSize(Size.Sm); }
+        public ButtonSettings Medium() { return SetSize(Size.Md); }
+        public ButtonSettings Large() { return SetSize(Size.Lg); }
+
+        public ButtonSettings SetSize(Size size)
         {
-            attrs["class"] += "btn-" + Category.ToString().ToLower();
-            if (Size != Size.Md) attrs["class"] += "btn-" + Size.ToString().ToLower();
-            if (BlockLevel) attrs["class"] += "btn-block";
-            if (!string.IsNullOrEmpty(Url))
-            {
-                attrs["href"] = Url;
-                Tag = ButtonTag.A;
-            }
-            if (Tag == ButtonTag.A && string.IsNullOrEmpty(Url)) attrs["href"] = "#";
-            if (Disabled) attrs[Tag == ButtonTag.A ? "class" : "disabled"] += "disabled";
+            Size = size;
+            return this;
         }
+
+        public ButtonSettings Block() { return SetBlockLevel(); }
+        public ButtonSettings SetBlockLevel(bool blockLevel = true)
+        {
+            BlockLevel = blockLevel;
+            return this;
+        }
+
+        public ButtonSettings Disabled() { return SetDisabled(); }
+        public ButtonSettings SetDisabled(bool disabled = true)
+        {
+            IsDisabled = disabled;
+            return this;
+        }
+
+        public ButtonSettings Primary() { return SetCategory(Category.Primary); }
+        public ButtonSettings Success() { return SetCategory(Category.Success); }
+        public ButtonSettings Info() { return SetCategory(Category.Info); }
+        public ButtonSettings Warning() { return SetCategory(Category.Warning); }
+        public ButtonSettings Danger() { return SetCategory(Category.Danger); }
+        public ButtonSettings Inverse() { return SetCategory(Category.Inverse); }
+        public ButtonSettings Link() { return SetCategory(Category.Link); }
+
+        public ButtonSettings SetCategory(Category category)
+        {
+            Category = category;
+            return this;
+        }
+
+        public ButtonSettings Url(string url) { return SetLinkUrl(url); }
+        public ButtonSettings SetLinkUrl(string url)
+        {
+            LinkUrl = url;
+            return this;
+        }
+        
 
         public enum ButtonTag { A, Button }
     }

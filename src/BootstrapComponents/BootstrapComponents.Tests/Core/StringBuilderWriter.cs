@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Web;
 using BootstrapComponents.Core;
 
 namespace BootstrapComponents.Tests.Core
@@ -15,6 +16,11 @@ namespace BootstrapComponents.Tests.Core
         public void Write(string str)
         {
             _stringBuilder.Append(str);
+        }
+
+        public void Write(IHtmlString htmlString)
+        {
+            Write(htmlString.ToHtmlString());
         }
     }
 }

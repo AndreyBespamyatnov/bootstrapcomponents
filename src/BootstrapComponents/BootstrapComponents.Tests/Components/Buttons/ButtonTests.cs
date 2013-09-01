@@ -31,7 +31,7 @@ namespace BootstrapComponents.Tests.Components.Buttons
         [Test]
         public void HyperlinkButton()
         {
-            var button = new Button("GitHub", new ButtonSettings { Url = "http://www.github.com"});
+            var button = new Button("GitHub", new ButtonSettings { LinkUrl = "http://www.github.com"});
             Assert.AreEqual("<a class=\"btn btn-default\" href=\"http://www.github.com\">GitHub</a>", button.ToHtmlString());
         }
 
@@ -45,14 +45,14 @@ namespace BootstrapComponents.Tests.Components.Buttons
         [Test]
         public void DisabledButton()
         {
-            var button = new Button("Disabled", new ButtonSettings { Disabled = true });
+            var button = new Button("Disabled", new ButtonSettings { IsDisabled = true });
             Assert.AreEqual("<button class=\"btn btn-default\" disabled=\"disabled\">Disabled</button>", button.ToHtmlString());
         }
 
         [Test]
         public void DisabledHyperlink()
         {
-            var button = new Button("Disabled", new ButtonSettings { Tag = ButtonSettings.ButtonTag.A, Disabled = true });
+            var button = new Button("Disabled", new ButtonSettings { Tag = ButtonSettings.ButtonTag.A, IsDisabled = true });
             Assert.AreEqual("<a class=\"btn btn-default disabled\" href=\"#\">Disabled</a>", button.ToHtmlString());
         }
 

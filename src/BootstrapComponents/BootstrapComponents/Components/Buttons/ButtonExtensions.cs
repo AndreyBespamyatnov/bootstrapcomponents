@@ -18,12 +18,12 @@ namespace BootstrapComponents.Components.Buttons
 
         public static Button Button(this HtmlHelper html, string text, string url)
         {
-            return new Button(text, new ButtonSettings { Url = url });
+            return new Button(text, new ButtonSettings { LinkUrl = url });
         }
 
         public static Button Button(this HtmlHelper html, string text, string url, ButtonSettings buttonSettings)
         {
-            buttonSettings.Url = url;
+            buttonSettings.LinkUrl = url;
             return new Button(text, buttonSettings);
         }
 

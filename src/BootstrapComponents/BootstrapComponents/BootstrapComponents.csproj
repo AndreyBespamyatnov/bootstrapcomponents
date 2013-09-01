@@ -53,6 +53,7 @@
     <Compile Include="Components\Images\ImageExtensions.cs" />
     <Compile Include="Components\Navbars\Navbar.cs" />
     <Compile Include="Components\Navbars\NavbarSettings.cs" />
+    <Compile Include="Core\BasicCloseableHtml.cs" />
     <Compile Include="Core\Bootstrap.cs" />
     <Compile Include="Core\CloseableHtml.cs" />
     <Compile Include="Core\NoInnerHtmlContainer.cs" />
