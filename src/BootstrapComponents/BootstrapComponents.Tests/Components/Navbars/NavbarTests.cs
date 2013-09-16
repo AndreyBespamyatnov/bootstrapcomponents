@@ -39,7 +39,7 @@ namespace BootstrapComponents.Tests.Components.Navbars
         {
             var output = new StringBuilder();
             var writer = new StringBuilderWriter(output);
-            using (var navbar = new Navbar(writer, Navbar.Settings.SetInverse()))
+            using (var navbar = new Navbar(writer, Navbar.Settings.Inverted()))
             {
 
             }

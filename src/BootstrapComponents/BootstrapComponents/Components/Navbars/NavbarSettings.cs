@@ -20,9 +20,9 @@
             Fixed = fixedPosition;
             return this;
         }
-        public NavbarSettings SetInverse(bool inverse = true)
+        public NavbarSettings Inverted(bool inverted = true)
         {
-            Inverse = inverse;
+            Inverse = inverted;
             return this;
         }
 

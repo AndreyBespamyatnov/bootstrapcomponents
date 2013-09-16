@@ -9,7 +9,7 @@ namespace BootstrapComponents.Tests.Components.Navs
     public class NavTests
     {
         [Test]
-        public void DefaultPills()
+        public void DefaultTabs()
         {
             var output = new StringBuilder();
             var writer = new StringBuilderWriter(output);
@@ -18,7 +18,7 @@ namespace BootstrapComponents.Tests.Components.Navs
                 writer.Write(nav.Link("Home", "#"));
                 writer.Write(nav.Link("Profile", "#"));
             }
-            Assert.AreEqual("<ul class=\"nav nav-pills\">" +
+            Assert.AreEqual("<ul class=\"nav nav-tabs\">" +
                                 "<li><a href=\"#\">Home</a></li>" +
                                 "<li><a href=\"#\">Profile</a></li>" +
                             "</ul>", output.ToString());
@@ -82,7 +82,7 @@ namespace BootstrapComponents.Tests.Components.Navs
                 writer.Write(nav.Link("Home", "#"));
                 writer.Write(nav.Link("Profile", "#"));
             }
-            Assert.AreEqual("<ul class=\"nav nav-pills nav-justified\">" +
+            Assert.AreEqual("<ul class=\"nav nav-tabs nav-justified\">" +
                                 "<li><a href=\"#\">Home</a></li>" +
                                 "<li><a href=\"#\">Profile</a></li>" +
                             "</ul>", output.ToString());
@@ -98,7 +98,7 @@ namespace BootstrapComponents.Tests.Components.Navs
                 writer.Write(nav.Link("Home", "#", new {@class="disabled"}));
                 writer.Write(nav.Link("Profile", "#"));
             }
-            Assert.AreEqual("<ul class=\"nav nav-pills\">" +
+            Assert.AreEqual("<ul class=\"nav nav-tabs\">" +
                                 "<li class=\"disabled\"><a href=\"#\">Home</a></li>" +
                                 "<li><a href=\"#\">Profile</a></li>" +
                             "</ul>", output.ToString());

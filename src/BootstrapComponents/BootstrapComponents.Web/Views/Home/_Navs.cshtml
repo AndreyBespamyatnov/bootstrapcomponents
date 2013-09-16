@@ -1,0 +1,92 @@
+﻿@using BootstrapComponents.Components.Navs
+<h2>Navs</h2>
+
+<h3>Pills</h3>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (var nav = Html.Nav("Home", Nav.Settings.Pills()))
+        {
+            @nav.Link("Home", "#")
+            @nav.Link("Profile", "#")
+            @nav.Link("Messages", "#")
+        }
+    </div>
+    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Pills()))
+{
+    &#64;nav.Link("Home", "#")
+    &#64;nav.Link("Profile", "#")
+    &#64;nav.Link("Messages", "#")
+}</div>
+</div>
+<p>Pills are also vertically stackable, just chain <code>Stack()</code> onto the settings parameter (must immediately follow the <code>Pills()</code> call)</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (var nav = Html.Nav("Home", Nav.Settings.Pills().Stack()))
+        {
+            @nav.Link("Home", "#")
+            @nav.Link("Profile", "#")
+            @nav.Link("Messages", "#")
+        }
+    </div>
+    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Pills().Stack()))
+{
+    &#64;nav.Link("Home", "#")
+    &#64;nav.Link("Profile", "#")
+    &#64;nav.Link("Messages", "#")
+}</div>
+</div>
+
+<h3>Tabs</h3>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (var nav = Html.Nav("Home", Nav.Settings.Tabs()))
+        {
+            @nav.Link("Home", "#")
+            @nav.Link("Profile", "#")
+            @nav.Link("Messages", "#")
+        }
+    </div>
+    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Tabs()))
+{
+    &#64;nav.Link("Home", "#")
+    &#64;nav.Link("Profile", "#")
+    &#64;nav.Link("Messages", "#")
+}</div>
+</div>
+<div class="alert alert-info">
+    <p><strong>Note:</strong> Tabs are the default style for navs, so you can exclude the settings parameter <code>Nav.Settings.Tabs()</code></p>
+</div>
+
+
+<h3>Justified</h3>
+<p>Chain <code>Justify()</code> to the settings parameter or set <code>Justified = true</code> to make tabs or pills equal widths of their parents</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (var nav = Html.Nav("Home", Nav.Settings.Justify()))
+        {
+            @nav.Link("Home", "#")
+            @nav.Link("Profile", "#")
+            @nav.Link("Messages", "#")
+        }
+        <br/>
+        @using (var nav = Html.Nav("Home", Nav.Settings.Pills().Justify()))
+        {
+            @nav.Link("Home", "#")
+            @nav.Link("Profile", "#")
+            @nav.Link("Messages", "#")
+        }
+    </div>
+    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Justify()))
+{
+    &#64;nav.Link("Home", "#")
+    &#64;nav.Link("Profile", "#")
+    &#64;nav.Link("Messages", "#")
+}
+&lt;br/&gt;
+&#64;using (var nav = Html.Nav("Home", Nav.Settings.Pills().Justify()))
+{
+    &#64;nav.Link("Home", "#")
+    &#64;nav.Link("Profile", "#")
+    &#64;nav.Link("Messages", "#")
+}</div>
+</div>

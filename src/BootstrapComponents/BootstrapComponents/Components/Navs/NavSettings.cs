@@ -47,5 +47,5 @@
         }
     }
 
-    public enum NavStyle { Pills, Tabs, Navbar }
+    public enum NavStyle { Tabs, Pills, Navbar }
 }

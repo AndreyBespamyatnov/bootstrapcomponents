@@ -1,0 +1,79 @@
+﻿@using BootstrapComponents.Components.Navbars
+@using BootstrapComponents.Components.Navs
+<h2>Navbars</h2>
+
+<h3>Default Navbar</h3>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (var navbar = Html.Navbar())
+        {
+            using (navbar.Header())
+            {
+                @navbar.Brand("Brand", "www.brand.com")
+            }
+            using (var nav = navbar.Nav("Active"))
+            {
+                @nav.Link("Active", "#")
+                @nav.Link("Normal", "#")
+                @nav.Link("Disabled", "#", new{ @class="disabled" })
+            }
+            @navbar.Text("Just some plain text")
+            using (var nav = navbar.RightNav("Active"))
+            {
+                @nav.Link("Right Link", "#")
+            }
+        }
+    </div>
+    <div class="panel-footer code">&#64;using (var navbar = Html.Navbar())
+{
+    using (navbar.Header())
+    {
+        &#64;navbar.Brand("Brand", "www.brand.com")
+    }
+    using (var nav = navbar.Nav("Active"))
+    {
+        &#64;nav.Link("Active", "#")
+        &#64;nav.Link("Normal", "#")
+        &#64;nav.Link("Disabled", "#", new{ &#64;class="disabled" })
+    }
+    &#64;navbar.Text("Just some plain text")
+    using (var nav = navbar.RightNav("Active"))
+    {
+        &#64;nav.Link("Right Link", "#")
+    }
+}</div>
+</div>
+<h3>More Options</h3>
+<p>Pass a settings parameter to the <code>Html.Navbar()</code> call to alter the appearance/behaviour of the navbar. The settings parameter can be either created by chaining options onto <code>Navbar.Settings</code> or create a <code>NavbarSettings</code> instance</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Chained Method</th>
+            <th>Settings Parameter</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Fixed to Top</td>
+            <td><code>.FixedTop()</code></td>
+            <td><code>Fixed = FixedPosition.Top</code></td>
+        </tr>
+        <tr>
+            <td>Fixed to Bottom</td>
+            <td><code>.FixedBottom()</code></td>
+            <td><code>Fixed = FixedPosition.Bottom</code></td>
+        </tr>
+        <tr>
+            <td>Inverted</td>
+            <td><code>.Inverted()</code></td>
+            <td><code>Inverse = true</code></td>
+        </tr>
+    </tbody>
+</table>
+<p>For example, to create an inverted navbar that is fixed to the top of the screen, the following are both equivalent: </p>
+
+<ul>
+    <li><code>using (var navbar = Html.Navbar(Navbar.Settings.Inverted().FixedTop())) { ... }</code></li>
+    <li><code>using (var navbar = Html.Navbar(new NavbarSettings { Inverse = true, Fixed = FixedPosition.Top })) { ... }</code></li>
+</ul>
