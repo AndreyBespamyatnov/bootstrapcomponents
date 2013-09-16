@@ -51,6 +51,7 @@
     <Compile Include="Components\Buttons\ButtonToolbarTests.cs" />
     <Compile Include="Components\Images\ImageTests.cs" />
     <Compile Include="Components\Navbars\NavbarTests.cs" />
+    <Compile Include="Components\Navs\NavTests.cs" />
     <Compile Include="Core\HtmlAttributesTests.cs" />
     <Compile Include="Core\HtmlContainerTests.cs" />
     <Compile Include="Core\StringBuilderWriter.cs" />

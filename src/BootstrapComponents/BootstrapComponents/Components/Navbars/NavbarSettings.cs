@@ -1,6 +1,4 @@
-﻿using System.Web.Mvc;
-
-namespace BootstrapComponents.Components.Navbars
+﻿namespace BootstrapComponents.Components.Navbars
 {
     public class NavbarSettings
     {
@@ -31,12 +29,4 @@ namespace BootstrapComponents.Components.Navbars
     }
     
     public enum FixedPosition { None, Top, Bottom }
-
-    public static class NavbarExtensions
-    {
-        public static Navbar Navbar(this HtmlHelper html, ViewContext context, NavbarSettings settings = null)
-        {
-            return new Navbar(context, settings);
-        }
-    }
 }

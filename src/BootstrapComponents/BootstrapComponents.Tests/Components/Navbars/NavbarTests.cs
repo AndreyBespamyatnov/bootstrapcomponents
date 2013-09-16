@@ -107,6 +107,55 @@ namespace BootstrapComponents.Tests.Components.Navbars
                             "</div></nav>", output.ToString());
         }
 
+        [Test]
+        public void NavbarWithNavLinks()
+        {
+            var output = new StringBuilder();
+            var writer = new StringBuilderWriter(output);
+            using (var navbar = new Navbar(writer))
+            {
+                using (var nav = navbar.Nav())
+                {
+                    writer.Write(nav.Link("Google", "www.google.com"));
+                    writer.Write(nav.Link("GitHub", "www.github.com"));
+                }
+            }
+            Assert.AreEqual("<nav class=\"navbar navbar-default\" role=\"navigation\"><div class=\"container\">" +
+                                "<ul class=\"nav navbar-nav\">" +
+                                    "<li><a href=\"www.google.com\">Google</a></li>" +
+                                    "<li><a href=\"www.github.com\">GitHub</a></li>" +
+                                "</ul>" +
+                            "</div></nav>", output.ToString());
+        }
+
+        [Test]
+        public void NavbarWithRightNav()
+        {
+            var output = new StringBuilder();
+            var writer = new StringBuilderWriter(output);
+            using (var navbar = new Navbar(writer))
+            {
+                using (var nav = navbar.Nav())
+                {
+                    writer.Write(nav.Link("Google", "www.google.com"));
+                    writer.Write(nav.Link("GitHub", "www.github.com"));
+                }
+                using (var nav = navbar.RightNav())
+                {
+                    writer.Write(nav.Link("Profile", "#"));
+                }
+            }
+            Assert.AreEqual("<nav class=\"navbar navbar-default\" role=\"navigation\"><div class=\"container\">" +
+                                "<ul class=\"nav navbar-nav\">" +
+                                    "<li><a href=\"www.google.com\">Google</a></li>" +
+                                    "<li><a href=\"www.github.com\">GitHub</a></li>" +
+                                "</ul>" +
+                                "<ul class=\"nav navbar-nav navbar-right\">" +
+                                    "<li><a href=\"#\">Profile</a></li>" +
+                                "</ul>" +
+                            "</div></nav>", output.ToString());
+        }
+
         #region Html Strings
 
 

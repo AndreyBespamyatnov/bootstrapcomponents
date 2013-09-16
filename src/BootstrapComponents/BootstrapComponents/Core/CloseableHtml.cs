@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BootstrapComponents.Core
@@ -8,7 +6,6 @@ namespace BootstrapComponents.Core
     public abstract class CloseableHtml : IDisposable
     {
         protected readonly IWriter _writer;
-        private readonly ViewContext _viewContext;
 
         protected CloseableHtml(ViewContext viewContext)
         {

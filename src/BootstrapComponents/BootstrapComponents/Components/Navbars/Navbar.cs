@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using BootstrapComponents.Components.Buttons;
+using BootstrapComponents.Components.Navs;
 using BootstrapComponents.Core;
 
 namespace BootstrapComponents.Components.Navbars
@@ -77,6 +73,31 @@ namespace BootstrapComponents.Components.Navbars
             t.Attrs["class"] += "navbar-brand";
             if (!string.IsNullOrEmpty(url)) t.Attrs["href"] = url;
             return t;
+        }
+
+        public Nav Nav(string activeIdentifier, NavSettings settings = null)
+        {
+            settings = settings ?? new NavSettings();
+            settings.Style = NavStyle.Navbar;
+            return new Nav(_writer, activeIdentifier, settings);
+        }
+
+        public Nav Nav(NavSettings settings = null)
+        {
+            return Nav(null, settings);
+        }
+
+        public Nav RightNav(string activeIdentifier, NavSettings settings = null)
+        {
+            settings = settings ?? new NavSettings();
+            settings.Style = NavStyle.Navbar;
+            settings.NavbarRight = true;
+            return new Nav(_writer, activeIdentifier, settings);
+        }
+
+        public Nav RightNav(NavSettings settings = null)
+        {
+            return RightNav(null, settings);
         }
 
         public static NavbarSettings Settings { get { return new NavbarSettings(); } }

@@ -39,6 +39,11 @@ namespace BootstrapComponents.Core
             return StartHtml() + inner + EndHtml();
         }
 
+        public override string ToString()
+        {
+            return ToHtmlString();
+        }
+
         /// <summary>
         /// Float an element left with a class
         /// </summary>
