@@ -36,5 +36,10 @@ namespace BootstrapComponents.Components.Buttons
         {
             return new ButtonGroup(buttons.Select(btn => btn(html)).ToArray());
         }
+
+        public static Button Submit(this HtmlHelper html, string text = "Submit", ButtonSettings buttonSettings = null)
+        {
+            return new Button(text, buttonSettings, new{type="Submit"});
+        }
     }
 }

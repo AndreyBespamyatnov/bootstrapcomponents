@@ -1,7 +1,5 @@
 ﻿using System.Text;
-using System.Web;
 using BootstrapComponents.Components.Navbars;
-using BootstrapComponents.Core;
 using BootstrapComponents.Tests.Core;
 using NUnit.Framework;
 

@@ -35,16 +35,12 @@ namespace BootstrapComponents.Components.Navs
             WriteOpening();
         }
 
-        public void WriteOpening()
+        private void WriteOpening()
         {
             var navAttrs = new HtmlAttributes(new { @class = "nav" });
             if (_settings.Style == NavStyle.Navbar) navAttrs["class"] += "navbar-nav";
             else navAttrs["class"] += "nav-" + _settings.Style.ToString().ToLower();
-            var nps = _settings as NavPillSettings;
-            if (nps != null)
-            {
-                if (nps.Stacked) navAttrs["class"] += "nav-stacked";
-            }
+            if (_settings.Stacked) navAttrs["class"] += "nav-stacked";
             if (_settings.Justified) navAttrs["class"] += "nav-justified";
             if (_settings.NavbarRight) navAttrs["class"] += "navbar-right";
             Write("<ul {0}>", navAttrs.ToString());
@@ -68,7 +64,7 @@ namespace BootstrapComponents.Components.Navs
             return Link(text, url, null, liHtmlAttrs, aHtmlAttrs);
         }
 
-        public override string ClosingHtml()
+        protected override string ClosingHtml()
         {
             return "</ul>";
         }

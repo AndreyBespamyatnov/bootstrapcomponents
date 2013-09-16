@@ -5,6 +5,7 @@
         public NavStyle Style { get; set; }
         public bool Justified { get; set; }
         public bool NavbarRight { get; set; }
+        public bool Stacked { get; set; }
 
         public NavSettings Tabs()
         {
@@ -12,10 +13,10 @@
             return this;
         }
 
-        public NavPillSettings Pills()
+        public NavSettings Pills()
         {
             Style = NavStyle.Pills;
-            return new NavPillSettings(this);
+            return this;
         }
 
         public NavSettings Justify(bool justified = true)
@@ -23,24 +24,8 @@
             Justified = justified;
             return this;
         }
-    }
 
-    public class NavPillSettings : NavSettings
-    {
-        public bool Stacked { get; set; }
-
-        public NavPillSettings(NavSettings settings)
-        {
-            Style = settings.Style;
-            Justified = settings.Justified;
-            var nps = settings as NavPillSettings;
-            if (nps != null)
-            {
-                Stacked = nps.Stacked;
-            }
-        }
-
-        public NavPillSettings Stack(bool stacked = true)
+        public NavSettings Stack(bool stacked = true)
         {
             Stacked = stacked;
             return this;

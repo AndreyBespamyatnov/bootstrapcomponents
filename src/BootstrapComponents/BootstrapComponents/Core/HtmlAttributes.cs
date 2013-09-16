@@ -50,5 +50,10 @@ namespace BootstrapComponents.Core
         {
             return func == null ? _attributes.Any() : _attributes.Any(func);
         }
-    }
+
+        public IDictionary<string, object> ToDictionary()
+        {
+            return _attributes.ToDictionary(x => x.Key, x => (object)x.Value.ToString());
+        } 
+    }   
 }

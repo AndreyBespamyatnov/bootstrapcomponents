@@ -49,6 +49,11 @@
     <Compile Include="Components\Buttons\ButtonGroupSettings.cs" />
     <Compile Include="Components\Buttons\ButtonSettings.cs" />
     <Compile Include="Components\Buttons\ButtonToolbar.cs" />
+    <Compile Include="Components\Forms\Form.cs" />
+    <Compile Include="Components\Forms\FormControls\Label.cs" />
+    <Compile Include="Components\Forms\FormControls\TextBox.cs" />
+    <Compile Include="Components\Forms\FormExtensions.cs" />
+    <Compile Include="Components\Forms\FormGroup.cs" />
     <Compile Include="Components\Images\Image.cs" />
     <Compile Include="Components\Images\ImageExtensions.cs" />
     <Compile Include="Components\Navbars\Navbar.cs" />

@@ -49,6 +49,7 @@
     <Compile Include="Components\Buttons\ButtonGroupTests.cs" />
     <Compile Include="Components\Buttons\ButtonTests.cs" />
     <Compile Include="Components\Buttons\ButtonToolbarTests.cs" />
+    <Compile Include="Components\Forms\FormTests.cs" />
     <Compile Include="Components\Images\ImageTests.cs" />
     <Compile Include="Components\Navbars\NavbarTests.cs" />
     <Compile Include="Components\Navs\NavTests.cs" />

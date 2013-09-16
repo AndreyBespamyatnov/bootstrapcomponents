@@ -10,7 +10,7 @@
             _end = end;
         }
 
-        public override string ClosingHtml()
+        protected override string ClosingHtml()
         {
             return _end;
         }

@@ -22,7 +22,7 @@ namespace BootstrapComponents.Components.Navbars
             WriteOpening();
         }
 
-        public void WriteOpening()
+        private void WriteOpening()
         {
             var navAttrs = new HtmlAttributes(new {@class = "navbar navbar-default", role = "navigation"});
             if (_settings.Fixed == FixedPosition.Top) navAttrs["class"] += "navbar-fixed-top";
@@ -32,7 +32,7 @@ namespace BootstrapComponents.Components.Navbars
             if (_settings.UseInnerContainer) Write("<div class=\"container\">");
         }
 
-        public override string ClosingHtml()
+        protected override string ClosingHtml()
         {
             return _settings.UseInnerContainer ? "</div></nav>" : "</nav>";
         }

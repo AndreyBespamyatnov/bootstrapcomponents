@@ -1,34 +1,35 @@
-﻿@using BootstrapComponents.Components.Navs
+﻿@using BootstrapComponents.Components.Forms
+@using BootstrapComponents.Components.Navs
 <h2>Navs</h2>
 
 <h3>Pills</h3>
 <div class="panel panel-default">
     <div class="panel-body">
-        @using (var nav = Html.Nav("Home", Nav.Settings.Pills()))
+        @using (var nav = Html.Pills("Home"))
         {
             @nav.Link("Home", "#")
             @nav.Link("Profile", "#")
             @nav.Link("Messages", "#")
         }
     </div>
-    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Pills()))
+    <div class="panel-footer code">&#64;using (var nav = Html.Pills("Home"))
 {
     &#64;nav.Link("Home", "#")
     &#64;nav.Link("Profile", "#")
     &#64;nav.Link("Messages", "#")
 }</div>
 </div>
-<p>Pills are also vertically stackable, just chain <code>Stack()</code> onto the settings parameter (must immediately follow the <code>Pills()</code> call)</p>
+<p>Pills are also vertically stackable, just chain <code>Stack()</code> onto the settings parameter</p>
 <div class="panel panel-default">
     <div class="panel-body">
-        @using (var nav = Html.Nav("Home", Nav.Settings.Pills().Stack()))
+        @using (var nav = Html.Pills("Home", Nav.Settings.Stack()))
         {
             @nav.Link("Home", "#")
             @nav.Link("Profile", "#")
             @nav.Link("Messages", "#")
         }
     </div>
-    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Pills().Stack()))
+    <div class="panel-footer code">&#64;using (var nav = Html.Pills("Home", Nav.Settings.Stack()))
 {
     &#64;nav.Link("Home", "#")
     &#64;nav.Link("Profile", "#")
@@ -39,22 +40,19 @@
 <h3>Tabs</h3>
 <div class="panel panel-default">
     <div class="panel-body">
-        @using (var nav = Html.Nav("Home", Nav.Settings.Tabs()))
+        @using (var nav = Html.Tabs("Home"))
         {
             @nav.Link("Home", "#")
             @nav.Link("Profile", "#")
             @nav.Link("Messages", "#")
         }
     </div>
-    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Tabs()))
+    <div class="panel-footer code">&#64;using (var nav = Html.Tabs("Home"))
 {
     &#64;nav.Link("Home", "#")
     &#64;nav.Link("Profile", "#")
     &#64;nav.Link("Messages", "#")
 }</div>
-</div>
-<div class="alert alert-info">
-    <p><strong>Note:</strong> Tabs are the default style for navs, so you can exclude the settings parameter <code>Nav.Settings.Tabs()</code></p>
 </div>
 
 
@@ -62,28 +60,28 @@
 <p>Chain <code>Justify()</code> to the settings parameter or set <code>Justified = true</code> to make tabs or pills equal widths of their parents</p>
 <div class="panel panel-default">
     <div class="panel-body">
-        @using (var nav = Html.Nav("Home", Nav.Settings.Justify()))
+        @using (var nav = Html.Pills("Home", Nav.Settings.Justify()))
         {
             @nav.Link("Home", "#")
             @nav.Link("Profile", "#")
             @nav.Link("Messages", "#")
         }
         <br/>
-        @using (var nav = Html.Nav("Home", Nav.Settings.Pills().Justify()))
+        @using (var nav = Html.Tabs("Home", Nav.Settings.Justify()))
         {
             @nav.Link("Home", "#")
             @nav.Link("Profile", "#")
             @nav.Link("Messages", "#")
         }
     </div>
-    <div class="panel-footer code">&#64;using (var nav = Html.Nav("Home", Nav.Settings.Justify()))
+    <div class="panel-footer code">&#64;using (var nav = Html.Pills("Home", Nav.Settings.Justify()))
 {
     &#64;nav.Link("Home", "#")
     &#64;nav.Link("Profile", "#")
     &#64;nav.Link("Messages", "#")
 }
 &lt;br/&gt;
-&#64;using (var nav = Html.Nav("Home", Nav.Settings.Pills().Justify()))
+&#64;using (var nav = Html.Tabs("Home", Nav.Settings.Justify()))
 {
     &#64;nav.Link("Home", "#")
     &#64;nav.Link("Profile", "#")

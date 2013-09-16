@@ -19,10 +19,11 @@ namespace BootstrapComponents.Core
 
         public void Write(string formatString, params object[] strs)
         {
+            if (formatString == null) return;
             _writer.Write(string.Format(formatString, strs));
         }
 
-        public abstract string ClosingHtml();
+        protected abstract string ClosingHtml();
 
         public void Dispose()
         {
